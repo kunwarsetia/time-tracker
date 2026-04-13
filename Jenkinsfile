@@ -5,6 +5,10 @@ pipeline {
         IMAGE_NAME = "your-dockerhub-username/timetracker:latest"
     }
 
+tools {
+        maven 'maven'
+    }
+    
     stages {
 
         stage('Checkout') {
