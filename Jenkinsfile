@@ -3,7 +3,6 @@ pipeline {
 
     tools {
         maven 'maven'
-    }
 
     environment {
         IMAGE_NAME = "your-dockerhub-username/timetracker:latest"
