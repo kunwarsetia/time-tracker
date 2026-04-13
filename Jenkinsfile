@@ -2,16 +2,18 @@ pipeline {
     agent any
 
     tools {
-        maven 'maven'
-
+    maven 'maven'
+}
+    
     environment {
         IMAGE_NAME = "your-dockerhub-username/timetracker:latest"
-    
+    }
+
     stages {
 
         stage('Checkout') {
             steps {
-                git 'https://github.com/kunwarsetia/time-tracker.git'
+                git 'https://github.com/your-repo.git'
             }
         }
 
@@ -46,4 +48,3 @@ pipeline {
         }
     }
 }
-    }
