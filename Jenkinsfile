@@ -1,13 +1,12 @@
 pipeline {
     agent any
 
-    environment {
-        IMAGE_NAME = "your-dockerhub-username/timetracker:latest"
-    }
-
-tools {
+    tools {
         maven 'maven'
     }
+
+    environment {
+        IMAGE_NAME = "your-dockerhub-username/timetracker:latest"
     
     stages {
 
