@@ -54,6 +54,7 @@ pipeline {
                     export PATH=/opt/homebrew/bin:$PATH
                     docker login -u $USER -p $PASS
                     docker push $IMAGE_NAME
+                    ls
                     '''
                 }
             }
