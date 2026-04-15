@@ -29,18 +29,22 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
+                sh '''
                 export PATH=/opt/homebrew/bin/docker:$PATH
-                sh 'docker build -t $IMAGE_NAME .'
+                docker build -t $IMAGE_NAME .
+                '''
             }
         }
 
         stage('Push Image') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker-creds', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
+                    sh '''
                     export PATH=/opt/homebrew/bin/docker:$PATH
-                    sh 'docker login -u $USER -p $PASS'
+                    docker login -u $USER -p $PASS
+                    docker push $IMAGE_NAME
+                    '''
                 }
-                sh 'docker push $IMAGE_NAME'
             }
         }
 
