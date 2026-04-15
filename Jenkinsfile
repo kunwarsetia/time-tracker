@@ -32,6 +32,11 @@ pipeline {
                 sh 'ls /opt/homebrew/bin'
                }
             }
+        stage('Check WAR') {
+             steps {
+                sh 'ls web/target'
+              }
+            }
 
         stage('Build Docker Image') {
             steps {
