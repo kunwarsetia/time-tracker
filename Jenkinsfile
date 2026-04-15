@@ -26,6 +26,13 @@ pipeline {
             }
         }
 
+        stage('Debug Docker Path') {
+            steps {
+                sh 'echo $PATH'
+                sh 'ls /opt/homebrew/bin/docker'
+               }
+            }
+
         stage('Build Docker Image') {
             steps {
                 sh '''
