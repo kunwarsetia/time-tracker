@@ -70,8 +70,8 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 sh 'export PATH=/opt/homebrew/bin/:$PATH'
-                sh 'kubectl apply -f deployment.yaml'
-                sh 'kubectl apply -f service.yaml'
+                sh '/opt/homebrew/bin/kubectl apply -f deployment.yaml'
+                sh '/opt/homebrew/bin/kubectl apply -f deployment.yaml'
             }
         }
     }
