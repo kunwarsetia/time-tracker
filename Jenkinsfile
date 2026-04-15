@@ -49,7 +49,7 @@ pipeline {
 
         stage('Push Image') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'docker-creds', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
+                withCredentials([usernamePassword(credentialsId: 'ebc80b7f-d175-4f74-8dd7-339a5b651c7a', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
                     sh '''
                     export PATH=/opt/homebrew/bin:$PATH
                     echo "Logging into DockerHub"
