@@ -52,7 +52,9 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'docker-creds', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
                     sh '''
                     export PATH=/opt/homebrew/bin:$PATH
+                    echo "Logging into DockerHub"
                     docker login -u $USER -p $PASS
+                     echo "pushing images in DockerHub"
                     docker push $IMAGE_NAME
                     ls
                     '''
