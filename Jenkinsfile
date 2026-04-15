@@ -7,7 +7,7 @@ pipeline {
 }
     
     environment {
-        IMAGE_NAME = "your-dockerhub-username/timetracker:latest"
+        IMAGE_NAME = "kunwarsetia/timetracker:latest"
     }
 
     stages {
