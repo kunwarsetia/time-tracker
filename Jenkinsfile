@@ -34,7 +34,7 @@ pipeline {
             }
         stage('Check WAR') {
              steps {
-                sh 'ls web/'
+                sh 'ls web/target'
               }
             }
 
