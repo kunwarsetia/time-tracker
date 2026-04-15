@@ -59,6 +59,11 @@ pipeline {
                 }
             }
         }
+        stage('Debug Next Stage') {
+    steps {
+        echo 'Reached next stage'
+    }
+}
 
         stage('Deploy to Kubernetes') {
             steps {
